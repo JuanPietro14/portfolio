@@ -1,4 +1,4 @@
-# 📌 Meu Portfólio
+# 📌 Meu Portfólio (Em desenvolvimento)
 
 Este é o meu portfólio pessoal, desenvolvido com **HTML, CSS e JavaScript** para apresentar meus projetos, formação e habilidades.
 
