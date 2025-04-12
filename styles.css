@@ -1,0 +1,386 @@
+body {
+  color: #fff;
+  background-color: #010101;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+nav {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 20px;
+  z-index: 100;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px 15px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+nav a:hover {
+  color: #0975ce;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  background-color: aqua;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+#typing {
+  font-size: 50px;
+  font-weight: 600;
+  display: inline-block;
+  border-right: 3px solid white;
+  animation: blink 0.6s infinite;
+  padding-right: 5px;
+}
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* HEADER */
+header {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  margin-bottom: 0;
+}
+
+.banner {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 15%;
+  background: linear-gradient(rgb(0 0 0 / 10%), rgb(0 0 0 / 100%) 75%);
+}
+
+.ukiyo {
+  position: absolute;
+  object-fit: cover;
+}
+
+.image-1 {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+
+
+.row {
+  background: 
+    linear-gradient(135deg, #010101 0%, #0a192f 100%),
+    url('images/noise.png') repeat,
+    linear-gradient(rgba(9, 117, 206, 0.05), rgba(9, 117, 206, 0.05));
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0;
+  margin: 50px 0;
+}
+
+.row::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at center,
+    rgba(79, 195, 247, 0.1) 0%,
+    transparent 70%
+  );
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  to { transform: rotate(360deg); }
+}
+
+
+#about {
+  padding: 120px 0;
+}
+
+.about {
+  max-width: 450px;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  border-radius: 15px;
+  z-index: 2;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  margin: 0 auto;
+}
+
+.about-content {
+  margin-top: 25px;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  opacity: 0.9;
+  margin-bottom: 20px;
+  text-align: justify;
+  position: relative;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.highlight {
+  color: #4fc3f7;
+  font-weight: 500;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 0.9; transform: translateY(0); }
+}
+
+.image-2 {
+  height: 100%;
+  width: 100%;
+}
+
+
+.projects {
+  position: relative;
+  padding: 120px 0;
+  background: linear-gradient(to bottom, #0a192f, #020c1b);
+  overflow: hidden;
+  margin: 50px 0;
+}
+
+.projects::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(79, 195, 247, 0.1) 0%, transparent 40%),
+    url('images/noise.png') repeat;
+  opacity: 0.05;
+}
+
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.projects-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.projects-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+}
+
+.projects-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #4fc3f7;
+}
+
+.projects-subtitle {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  color: #4fc3f7;
+  text-decoration: none;
+  margin-left: 10px;
+  transition: all 0.3s ease;
+}
+
+.github-link:hover {
+  color: #fff;
+}
+
+.github-link svg {
+  margin-right: 6px;
+  fill: currentColor;
+}
+
+
+.tech-stack {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.tech-item:hover {
+  transform: translateY(-5px);
+}
+
+.tech-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin-bottom: 8px;
+  filter: drop-shadow(0 0 8px rgba(79, 195, 247, 0.4));
+}
+
+.tech-item span {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+footer {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 80px 0;
+  margin-top: 50px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.footer-info h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.footer-info p {
+  opacity: 0.8;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  color: #a8b2d1;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.contact-link svg {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  color: #4fc3f7;
+}
+
+.contact-link:hover {
+  color: #4fc3f7;
+  transform: translateX(5px);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 30px;
+  text-align: center;
+}
+
+.footer-bottom p {
+  opacity: 0.7;
+  font-size: 0.9rem;
+  margin: 5px 0;
+}
+
+
+@media (max-width: 768px) {
+  .row, .projects {
+    padding: 80px 0;
+    margin: 30px 0;
+  }
+  
+  #about {
+    padding: 80px 0;
+  }
+  
+  .about {
+    max-width: 90%;
+  }
+  
+  footer {
+    padding: 60px 0;
+    min-height: auto;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .projects-header h2 {
+    font-size: 2rem;
+  }
+  
+  .footer-info h2 {
+    font-size: 1.8rem;
+  }
+  
+  .contact-link {
+    font-size: 0.95rem;
+  }
+}
